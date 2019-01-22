@@ -1,5 +1,5 @@
 ﻿# TowerDefence-2D
-A simple Tower Defence 2D game written in vanilla Java. Based on the YouTube series[How To Make a Java Tower Defence Game](https://www.youtube.com/playlist?list=PLB85864F4E46196A9).
+A simple Tower Defence 2D game written in vanilla Java. Based on the YouTube series [How To Make a Java Tower Defence Game](https://www.youtube.com/playlist?list=PLB85864F4E46196A9).
 
 ![ ](example/towerdefence-2d.gif)
 
