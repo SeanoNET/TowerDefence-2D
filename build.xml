@@ -54,6 +54,10 @@
     </target>
     <target name="jar">
         <mkdir dir="bin/jar"/>
-        <jar destfile="bin/jar/TowerDefence2D.jar" basedir="bin"/>
+        <jar destfile="bin/jar/TowerDefence2D.jar" basedir="bin">
+            <manifest>
+                <attribute name="Main-Class" value="Frame"/>
+            </manifest>
+        </jar>
     </target>
 </project>
