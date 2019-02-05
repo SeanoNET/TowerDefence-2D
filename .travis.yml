@@ -12,7 +12,7 @@ after_success:
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
-  file: bin/jar/
+  file: bin/jar/TowerDefence2D.jar
   skip_cleanup: true
   on:
     tags: true
