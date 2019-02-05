@@ -6,6 +6,7 @@ script:
   - ant jar
 
 after_success:
+  - ls 
   - ls bin/
   - ls -l bin/jar
 
