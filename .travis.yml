@@ -8,3 +8,11 @@ script:
 after_success:
   - ls bin/
   - ls -l bin/jar
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file: bin/jar/
+  skip_cleanup: true
+  on:
+    tags: true
