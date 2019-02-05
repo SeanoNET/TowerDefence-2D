@@ -52,4 +52,8 @@
             <classpath refid="TowerDefence-2D.classpath"/>
         </java>
     </target>
+    <target name="jar">
+        <mkdir dir="bin/jar"/>
+        <jar destfile="bin/jar/TowerDefence2D.jar" basedir="bin"/>
+    </target>
 </project>
