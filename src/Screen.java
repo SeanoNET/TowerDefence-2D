@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.*;
 import java.io.*;
+import java.net.URL;
 
 public class Screen extends JPanel implements Runnable{
 	public Thread thread = new Thread(this);
@@ -46,25 +47,37 @@ public class Screen extends JPanel implements Runnable{
 		store = new Store();
 
 		
-		
+		URL groundGrassLoc = getClass().getResource("Textures/Tile_GroundGrass.png");
 		for(int i =0; i< tileset_groundGrass.length;i++){
-			tileset_groundGrass[i] = new ImageIcon("Resource/Textures/Tile_GroundGrass.png").getImage();
+			tileset_groundGrass[i] = new ImageIcon(groundGrassLoc).getImage();
 			tileset_groundGrass[i] = createImage(new FilteredImageSource(tileset_groundGrass[i].getSource(), new CropImageFilter(0,25*i,25,25)));
 		}
+		URL airAirLoc = getClass().getResource("Textures/Tile_airAir.png");
 		for(int i =0; i< tileset_air.length;i++){
-			tileset_air[i] = new ImageIcon("Resource/Textures/Tile_airAir.png").getImage();
+			tileset_air[i] = new ImageIcon(airAirLoc).getImage();
 			tileset_air[i] = createImage(new FilteredImageSource(tileset_air[i].getSource(), new CropImageFilter(0,25*i,25,25)));
 		}
 		
-		tileset_res[0] = new ImageIcon("Resource/Textures/Cell.png").getImage();
-		tileset_res[1] = new ImageIcon("Resource/Textures/coin.png").getImage();
-		tileset_res[2] = new ImageIcon("Resource/Textures/heart.png").getImage();
+		URL cellLoc = getClass().getResource("Textures/Cell.png");
+		tileset_res[0] = new ImageIcon(cellLoc).getImage();
 		
-		tileset_mob[0] = new ImageIcon("Resource/Textures/mob1.png").getImage();
+		URL coinLoc = getClass().getResource("Textures/coin.png");
+		tileset_res[1] = new ImageIcon(coinLoc).getImage();
 		
-		tileset_mob[1] = new ImageIcon("Resource/Textures/boss1.png").getImage();
+		URL heartLoc = getClass().getResource("Textures/heart.png");
+		tileset_res[2] = new ImageIcon(heartLoc).getImage();
 		
-		save.loadSave(new File("Save/Mission"));
+		URL mobLoc = getClass().getResource("Textures/mob1.png");
+		tileset_mob[0] = new ImageIcon(mobLoc).getImage();
+		
+		URL bossLoc = getClass().getResource("Textures/boss1.png");
+		tileset_mob[1] = new ImageIcon(bossLoc).getImage();
+		
+
+
+		ClassLoader classLoader = getClass().getClassLoader();
+		File file = new File(classLoader.getResource("Mission").getFile());		
+		save.loadSave(file);
 		
 		for(int i =0; i< mobs.length;i++){
 			mobs[i] = new Mob();
