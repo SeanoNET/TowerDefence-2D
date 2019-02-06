@@ -55,6 +55,8 @@
     <target name="jar">
         <mkdir dir="bin/jar"/>
         <jar destfile="bin/jar/TowerDefence2D.jar" basedir="bin">
+            <fileset dir="." includes="Save/**" />
+            <fileset dir="." includes="Resource/**" />
             <manifest>
                 <attribute name="Main-Class" value="Frame"/>
             </manifest>
