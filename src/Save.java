@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class Save {
-	public void loadSave(File loadPath){
+	public void loadSave(InputStream loadPath){
 		try{
 		Scanner loadScanner = new Scanner(loadPath);
 		
@@ -20,7 +20,7 @@ public class Save {
 				
 		}	
 		loadScanner.close();
-		} catch(Exception e){}
+		} catch(Exception e){System.out.println(e.getMessage());}
 		
 		
 }

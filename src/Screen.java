@@ -76,8 +76,9 @@ public class Screen extends JPanel implements Runnable{
 
 
 		ClassLoader classLoader = getClass().getClassLoader();
-		File file = new File(classLoader.getResource("Mission").getFile());		
-		save.loadSave(file);
+		InputStream stream = classLoader.getResourceAsStream("Mission");
+		
+		save.loadSave(stream);
 		
 		for(int i =0; i< mobs.length;i++){
 			mobs[i] = new Mob();
